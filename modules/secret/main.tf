@@ -5,7 +5,6 @@ resource "aws_secretsmanager_secret" "this" {
   name_prefix                    = local.name_prefix
   description                    = var.description
   kms_key_id                     = var.kms_key_id
-  policy                         = var.policy
   recovery_window_in_days        = var.recovery_window_in_days
   force_overwrite_replica_secret = var.force_overwrite_replica_secret
 

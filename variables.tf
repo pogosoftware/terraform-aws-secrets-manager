@@ -1,15 +1,13 @@
 ##########################################################################
-### REQUIRED
+### secret
 ##########################################################################
 variable "name" {
-  description = "Friendly name of the new secret"
+  default     = null
+  description = "Required if `create_secret` is `true`. Friendly name of the new secret"
   type        = string
 }
 
-##########################################################################
-### OPTIONAL
-##########################################################################
-variable "create" {
+variable "create_secret" {
   default     = true
   description = "Whether to create this resource or not?"
   type        = bool
@@ -55,4 +53,39 @@ variable "use_name_prefix" {
   default     = true
   description = "Determines whether to use `name` as is or create a unique name beginning with `name` as the specified prefix"
   type        = bool
+}
+
+##########################################################################
+### secret_policy
+##########################################################################
+variable "create_secret_policy" {
+  default     = true
+  description = "Whether to create this resource or not?"
+  type        = bool
+}
+
+variable "policy" {
+  description = "Required if `create_secret_policy` is `true`. Valid JSON document representing a resource policy"
+  type        = string
+}
+
+##########################################################################
+### secret_rotation
+##########################################################################
+variable "create_secret_rotation" {
+  default     = true
+  description = "Whether to create this resource or not?"
+  type        = bool
+}
+
+variable "rotation_lambda_arn" {
+  description = "Required if `create_secret_rotation` is `true`. Specifies the ARN of the Lambda function that can rotate the secret"
+  type        = string
+}
+
+variable "rotation_rules" {
+  description = "Required if `create_secret_rotation` is `true`. A structure that defines the rotation configuration for this secret"
+  type = map(object({
+    automatically_after_days = number
+  }))
 }
