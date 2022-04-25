@@ -65,6 +65,7 @@ variable "create_secret_policy" {
 }
 
 variable "policy" {
+  default     = null
   description = "Required if `create_secret_policy` is `true`. Valid JSON document representing a resource policy"
   type        = string
 }
@@ -79,11 +80,13 @@ variable "create_secret_rotation" {
 }
 
 variable "rotation_lambda_arn" {
+  default     = null
   description = "Required if `create_secret_rotation` is `true`. Specifies the ARN of the Lambda function that can rotate the secret"
   type        = string
 }
 
 variable "rotation_rules" {
+  default     = {}
   description = "Required if `create_secret_rotation` is `true`. A structure that defines the rotation configuration for this secret"
   type = map(object({
     automatically_after_days = number
