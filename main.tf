@@ -32,3 +32,14 @@ module "secret_rotation" {
   rotation_lambda_arn = var.rotation_lambda_arn
   rotation_rules      = var.rotation_rules
 }
+
+module "secret_version" {
+  source = "./modules/secret_version"
+
+  count = var.create_secret_version ? 1 : 0
+
+  secret_id      = local.secret_id
+  secret_string  = var.secret_string
+  secret_binary  = var.secret_binary
+  version_stages = var.version_stages
+}
