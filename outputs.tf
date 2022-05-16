@@ -6,6 +6,11 @@ output "secret_id" {
   value       = try(module.secret.this[0].id, "")
 }
 
+output "secret_name" {
+  description = "The name of the secret"
+  value       = try(module.secret.this[0].name, "")
+}
+
 output "secret_arn" {
   description = "The ARN of the secret"
   value       = try(module.secret.this[0].arn, "")
