@@ -46,5 +46,6 @@ No modules.
 |------|-------------|
 | <a name="output_arn"></a> [arn](#output\_arn) | The ARN of the secret |
 | <a name="output_id"></a> [id](#output\_id) | The ID of the secret |
+| <a name="output_name"></a> [name](#output\_name) | The name of the secret |
 | <a name="output_replica"></a> [replica](#output\_replica) | Attributes of a replica |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

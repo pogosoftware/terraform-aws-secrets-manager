@@ -54,6 +54,7 @@ No resources.
 |------|-------------|
 | <a name="output_secret_arn"></a> [secret\_arn](#output\_secret\_arn) | The ARN of the secret |
 | <a name="output_secret_id"></a> [secret\_id](#output\_secret\_id) | The ID of the secret |
+| <a name="output_secret_name"></a> [secret\_name](#output\_secret\_name) | The name of the secret |
 | <a name="output_secret_policy_id"></a> [secret\_policy\_id](#output\_secret\_policy\_id) | The ID of the secret policy |
 | <a name="output_secret_replica"></a> [secret\_replica](#output\_secret\_replica) | Attributes of a replica |
 | <a name="output_secret_rotation_enabled"></a> [secret\_rotation\_enabled](#output\_secret\_rotation\_enabled) | Specifies whether automatic rotation is enabled for this secret |
